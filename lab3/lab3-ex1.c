@@ -3,16 +3,24 @@
 
 #define SIZE  16
 
+/*
+ * Ubaidulah Khan 2271135K
+ * 
+ * exercise 1 lab 3
+ * 
+ * Create a 2D array with random data and 
+ * ready to be displayed in a pgm image
+ */
 int main(void){
 	
 	
 	unsigned char array2d[SIZE][SIZE];
-	//char[255] output;
 	
-	// creating the image
+	// creating the image data
 	int i, j;
 	for(i = 0; i < SIZE; i++){
 		for(j = 0; j < SIZE; j++){
+			// random pattern (to check out!)
 			if ( j % (2 + i -1) == 0){
 				array2d[i][j] = ((255-i-j) * (i +j)) % 255;
 			}else{
@@ -21,14 +29,16 @@ int main(void){
 		}
 	}
 	
+	// create the header
 	printf("P2 %d %d %d\n",SIZE, SIZE, 255);
+	// print out all the data
 	for(i = 0; i < SIZE; i++){
 		for(j = 0; j < SIZE; j++){
 			printf("%d ",array2d[i][j]);
 		}
 		printf("\n");
 	} 
-	//printf("This is  = %d\n",array2d[0][0]);
+	
 	
 	return 0;
 	
