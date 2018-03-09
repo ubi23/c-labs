@@ -1,6 +1,6 @@
 CC=gcc
 CCFLAGS=-Wall
-LIBS=
+LIBS=-lm
 
 mycode: main.o complexmath.o validate.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(LIBS)
